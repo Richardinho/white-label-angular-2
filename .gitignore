@@ -3,6 +3,8 @@ node_modules
 
 node_modules/*
 !node_modules/core-js/*
+!node_modules/core-js/client/
+!node_modules/core-js/client/shim.min.js
 
 *.idea
 *.iml
