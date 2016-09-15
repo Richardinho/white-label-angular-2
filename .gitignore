@@ -1,5 +1,5 @@
-!node_modules
 node_modules/*
+!node_modules
 !node_modules/core-js/client/shim.min.js
 
 *.idea
