@@ -10,21 +10,14 @@ var apiUrl = isDev ? 'http://localhost:4000' : 'https://white-label-api.herokuap
 
 app.set('view engine', 'ejs');
 
-if(isDev) {
-	app.use('/system.js', express.static('./jspm_packages/system.js'));
-	app.use('/jspm_packages', express.static('./jspm_packages'));
-	app.use('/js', express.static('js'));
-	app.use('/config.js', express.static('./config.js'));
-} else {
-	app.use('/app.js', express.static('./app.js'));
-}
-
 
 var config = {
 	title: 'develop environment' ,
 	apiUrl : apiUrl,
 	isDev : isDev
 };
+
+app.use('/')
 
 app.get('/', function (req, res) {
   res.render('index', config);
