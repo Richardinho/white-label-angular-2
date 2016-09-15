@@ -7,6 +7,9 @@ ejs.delimiter = '$';
 port = process.env.PORT || 5000;
 
 app.use('/node_modules', express.static('./node_modules'));
+app.use('/app', express.static('./app'));
+app.use('/config', express.static('./config'));
+
 app.set('view engine', 'ejs');
 
 config = {
