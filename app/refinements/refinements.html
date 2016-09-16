@@ -7,9 +7,11 @@
 		<input id='year-from'
 					 type='range'
 					 step='1'
-					 min=''
-					 max=''
-					 value=''
+					 min='{{ criteria.minYear }}'
+					 max='{{ criteria.maxYear }}'
+					 value='{{ criteria.yearFrom }}'
+					 (change)='onYearFromChange(yearFrom.value)'
+					 #yearFrom
 			/>
 		<label for='year-from'>{{ criteria.yearFrom }}</label>
 	</li>
@@ -18,9 +20,11 @@
 		<input id='year-to'
 					 type='range'
 					 step='1'
-					 min=''
-					 max=''
-					 value=''
+					 min='{{ criteria.minYear }}'
+					 max='{{ criteria.maxYear }}'
+					 value='{{ criteria.yearTo }}'
+					 (change)='onYearToChange(yearTo.value)'
+					 #yearTo
 			>
 		<label for='year-to'>{{ criteria.yearTo }}</label>
 	</li>

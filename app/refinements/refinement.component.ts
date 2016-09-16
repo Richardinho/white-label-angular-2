@@ -17,7 +17,15 @@ export class RefinementComponent{
 		this.criteriaChanged.emit({ dynasty });
 	}
 
-	onSortSelect(sort) {
-		console.log(sort);
+	onSortSelect(sortBy) {
+		this.criteriaChanged.emit({ sortBy });
+	}
+
+	onYearFromChange(yearFrom) {
+		this.criteriaChanged.emit({ yearFrom });
+	}
+
+	onYearToChange(yearTo) {
+		this.criteriaChanged.emit({ yearTo });
 	}
 };

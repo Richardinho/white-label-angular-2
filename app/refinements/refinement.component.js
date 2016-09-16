@@ -16,8 +16,14 @@ var RefinementComponent = (function () {
     RefinementComponent.prototype.onDynastySelect = function (dynasty) {
         this.criteriaChanged.emit({ dynasty: dynasty });
     };
-    RefinementComponent.prototype.onSortSelect = function (sort) {
-        console.log(sort);
+    RefinementComponent.prototype.onSortSelect = function (sortBy) {
+        this.criteriaChanged.emit({ sortBy: sortBy });
+    };
+    RefinementComponent.prototype.onYearFromChange = function (yearFrom) {
+        this.criteriaChanged.emit({ yearFrom: yearFrom });
+    };
+    RefinementComponent.prototype.onYearToChange = function (yearTo) {
+        this.criteriaChanged.emit({ yearTo: yearTo });
     };
     __decorate([
         core_1.Input(), 
