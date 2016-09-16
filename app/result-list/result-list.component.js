@@ -15,7 +15,8 @@ var ResultListComponent = (function () {
     ResultListComponent = __decorate([
         core_1.Component({
             selector: 'result-list',
-            template: 'this is the result list'
+            templateUrl: 'app/result-list/result-list.html',
+            styleUrls: ['app/result-list/result-list.css']
         }), 
         __metadata('design:paramtypes', [])
     ], ResultListComponent);

@@ -55,3 +55,44 @@ ul {
 li {
 	list-style-type : none;
 }
+
+/*  Shared CSS */
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+/* clearfix */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
+/* media object */
+.media {
+}
+.media, .media-body {
+	overflow : hidden;
+}
+.media .media-image {
+	float:left;
+	margin-right: .6em;
+}
+.media .media-image img{
+	display:block;
+}
+.media .imgExt{
+	float:right;
+	margin-left: 10px;
+}
+
+body {
+	background : #1454ac;
+}
