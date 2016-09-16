@@ -15,6 +15,9 @@ var app_component_1 = require('./appcomponent/app.component');
 var banner_component_1 = require('./banner/banner.component');
 var refinement_component_1 = require('./refinements/refinement.component');
 var result_list_component_1 = require('./result-list/result-list.component');
+var routing_1 = require('./routing');
+var search_page_component_1 = require('./search-page/search-page.component');
+var emperor_page_component_1 = require('./emperor-page/emperor-page.component');
 var data_service_1 = require('./providers/data-service');
 var AppModule = (function () {
     function AppModule() {
@@ -23,13 +26,16 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
+                routing_1.routing,
                 http_1.HttpModule
             ],
             declarations: [
                 app_component_1.AppComponent,
                 banner_component_1.BannerComponent,
                 result_list_component_1.ResultListComponent,
-                refinement_component_1.RefinementComponent
+                refinement_component_1.RefinementComponent,
+                search_page_component_1.SearchPageComponent,
+                emperor_page_component_1.EmperorPageComponent
             ],
             providers: [
                 data_service_1.DataService
