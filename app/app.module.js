@@ -10,11 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var http_1 = require('@angular/http');
 var app_component_1 = require('./appcomponent/app.component');
 var banner_component_1 = require('./banner/banner.component');
+var refinement_component_1 = require('./refinements/refinement.component');
 var result_list_component_1 = require('./result-list/result-list.component');
 var results_service_1 = require('./providers/results-service');
-var http_1 = require('@angular/http');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,7 +28,8 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 banner_component_1.BannerComponent,
-                result_list_component_1.ResultListComponent
+                result_list_component_1.ResultListComponent,
+                refinement_component_1.RefinementComponent
             ],
             providers: [
                 results_service_1.ResultsService

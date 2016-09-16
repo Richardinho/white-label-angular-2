@@ -3,3 +3,12 @@
 	margin : 0 auto;
 	display : block;
 }
+
+.content {
+	display : flex;
+}
+refinements {
+}
+result-list {
+	flex-grow : 1;
+}

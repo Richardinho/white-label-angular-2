@@ -1,0 +1,30 @@
+:host {
+	width : 300px;
+	font-size : 16px;
+	padding : 1.2em;
+	font-family : ubuntu;
+	border-right : 1px solid white;
+}
+h1, h2, h3, h4 {
+	line-height : 1;
+	padding : .4em 0;
+}
+h2 {
+	font-size : 1.4em;
+}
+h3 {
+	font-size : 1.2em;
+}
+h4 {
+	font-size : 1.1em;
+}
+.range-filter {
+	padding : .4em  0;
+}
+.range-filter > label,
+.range-filter > input {
+	display : inline-block;
+	vertical-align : middle;
+}
+
+
