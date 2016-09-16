@@ -9,29 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./appcomponent/app.component');
-var banner_component_1 = require('./banner/banner.component');
-var result_list_component_1 = require('./result-list/result-list.component');
-var AppModule = (function () {
-    function AppModule() {
+var BannerComponent = (function () {
+    function BannerComponent() {
+        this.title = 'Emperors of Rome';
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule
-            ],
-            declarations: [
-                app_component_1.AppComponent,
-                banner_component_1.BannerComponent,
-                result_list_component_1.ResultListComponent
-            ],
-            providers: [],
-            bootstrap: [app_component_1.AppComponent]
+    BannerComponent = __decorate([
+        core_1.Component({
+            selector: 'banner',
+            templateUrl: 'app/banner/banner.html',
+            styleUrls: ['app/banner/banner.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], BannerComponent);
+    return BannerComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.BannerComponent = BannerComponent;
+//# sourceMappingURL=banner.component.js.map
