@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector : 'refinements',
@@ -6,7 +6,18 @@ import { Component } from '@angular/core';
 	styleUrls : ['app/refinements/refinements.css']
 })
 
-export class RefinementComponent {
+export class RefinementComponent{
 
+	@Input()
+	criteria: any;
 
+	@Output() criteriaChanged = new EventEmitter();
+
+	onDynastySelect(dynasty) {
+		this.criteriaChanged.emit({ dynasty });
+	}
+
+	onSortSelect(sort) {
+		console.log(sort);
+	}
 };

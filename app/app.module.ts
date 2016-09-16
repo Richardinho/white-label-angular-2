@@ -7,7 +7,7 @@ import { BannerComponent }     from './banner/banner.component';
 import { RefinementComponent } from './refinements/refinement.component';
 import { ResultListComponent } from './result-list/result-list.component';
 
-import { ResultsService } from './providers/results-service';
+import { DataService } from './providers/data-service';
 
 @NgModule({
   imports:      [
@@ -21,7 +21,7 @@ import { ResultsService } from './providers/results-service';
     RefinementComponent
   ],
   providers : [
-    ResultsService
+    DataService
   ],
   bootstrap: [ AppComponent ]
 })

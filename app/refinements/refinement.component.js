@@ -11,7 +11,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var RefinementComponent = (function () {
     function RefinementComponent() {
+        this.criteriaChanged = new core_1.EventEmitter();
     }
+    RefinementComponent.prototype.onDynastySelect = function (dynasty) {
+        this.criteriaChanged.emit({ dynasty: dynasty });
+    };
+    RefinementComponent.prototype.onSortSelect = function (sort) {
+        console.log(sort);
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], RefinementComponent.prototype, "criteria", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RefinementComponent.prototype, "criteriaChanged", void 0);
     RefinementComponent = __decorate([
         core_1.Component({
             selector: 'refinements',

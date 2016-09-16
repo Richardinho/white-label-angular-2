@@ -5,15 +5,15 @@ import 'rxjs/add/operator/toPromise';
 const API_URL = 'https://white-label-api.herokuapp.com/api/emperors';
 
 @Injectable()
-export class ResultsService {
+export class DataService {
 
 	constructor(private http: Http) {}
 
-	getResults(): Promise<any[]> {
+	getData(queryString: string): Promise<any> {
 
-		return this.http.get(API_URL)
+		return this.http.get(API_URL + queryString)
 							 .toPromise()
-							 .then(response => response.json().results)
+							 .then(response => response.json())
 							 .catch(this.handleError);
 	}
 

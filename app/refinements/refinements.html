@@ -11,7 +11,7 @@
 					 max=''
 					 value=''
 			/>
-		<label for='year-from'></label>
+		<label for='year-from'>{{ criteria.yearFrom }}</label>
 	</li>
 	<li class='range-filter'>
 		<label for='year-to'>to</label>
@@ -22,18 +22,18 @@
 					 max=''
 					 value=''
 			>
-		<label for='year-to'></label>
+		<label for='year-to'>{{ criteria.yearTo }}</label>
 	</li>
 </ul>
 
 <h4>Dynasty</h4>
 
-<select value='' id='dynasties' >
-	<option></option>
+<select #dynasty (change)="onDynastySelect(dynasty.value)" id='dynasties' >
+	<option *ngFor="let p of criteria.dynasties" [value]="p">{{p}}</option>
 </select>
 
 <h3>Sort by</h3>
 
-<select value='' id='sort-by'>
-	<option></option>
+<select #sort (change)='onSortSelect(sort.value)' id='sort-by'>
+	<option *ngFor='let p of criteria.sortingOrders' [value]='p'>{{p}}</option>
 </select>

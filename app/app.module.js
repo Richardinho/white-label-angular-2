@@ -15,7 +15,7 @@ var app_component_1 = require('./appcomponent/app.component');
 var banner_component_1 = require('./banner/banner.component');
 var refinement_component_1 = require('./refinements/refinement.component');
 var result_list_component_1 = require('./result-list/result-list.component');
-var results_service_1 = require('./providers/results-service');
+var data_service_1 = require('./providers/data-service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,7 +32,7 @@ var AppModule = (function () {
                 refinement_component_1.RefinementComponent
             ],
             providers: [
-                results_service_1.ResultsService
+                data_service_1.DataService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

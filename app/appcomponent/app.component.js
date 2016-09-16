@@ -9,17 +9,56 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var results_service_1 = require('../providers/results-service');
+var data_service_1 = require('../providers/data-service');
 var AppComponent = (function () {
-    function AppComponent(resultsService) {
-        this.resultsService = resultsService;
+    function AppComponent(dataService) {
+        this.dataService = dataService;
+        this.criteria = {};
     }
-    AppComponent.prototype.ngOnInit = function () {
+    AppComponent.prototype.refreshData = function () {
         var _this = this;
-        this.resultsService.getResults()
-            .then(function (results) {
-            _this.results = results;
+        this.dataService.getData(this.queryStringFromCriteria(this.criteria))
+            .then(function (data) {
+            _this.results = data.results;
+            _this.criteria = data.criteria;
         });
+    };
+    AppComponent.prototype.queryStringFromCriteria = function (criteria) {
+        var _this = this;
+        var queryParams = [
+            'sortBy',
+            'dynasty',
+            'yearFrom',
+            'yearTo'
+        ];
+        var self = this;
+        return queryParams.reduce(function (memo, key, index) {
+            var amper = (index > 0) ? '&' : '';
+            if (criteria[key]) {
+                return memo + amper + _this.decamelize(key, '-') + '=' + criteria[key];
+            }
+            else {
+                return memo;
+            }
+        }, '?');
+    };
+    //  todo: should use actual node module rather than this c&p!
+    AppComponent.prototype.decamelize = function (str, sep) {
+        if (typeof str !== 'string') {
+            throw new TypeError('Expected a string');
+        }
+        sep = typeof sep === 'undefined' ? '_' : sep;
+        return str
+            .replace(/([a-z\d])([A-Z])/g, '$1' + sep + '$2')
+            .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + sep + '$2')
+            .toLowerCase();
+    };
+    AppComponent.prototype.onCriteriaChange = function (val) {
+        this.criteria = Object.assign(this.criteria, val);
+        this.refreshData();
+    };
+    AppComponent.prototype.ngOnInit = function () {
+        this.refreshData();
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -27,7 +66,7 @@ var AppComponent = (function () {
             templateUrl: 'app/appcomponent/app.html',
             styleUrls: ['app/appcomponent/app.css']
         }), 
-        __metadata('design:paramtypes', [results_service_1.ResultsService])
+        __metadata('design:paramtypes', [data_service_1.DataService])
     ], AppComponent);
     return AppComponent;
 }());

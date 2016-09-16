@@ -1,5 +1,6 @@
 <banner></banner>
 <div class='content'>
-	<refinements></refinements>
+	<refinements [criteria]='criteria'
+							 (criteriaChanged)="onCriteriaChange($event)"></refinements>
 	<result-list [results]='results'></result-list>
 </div>
