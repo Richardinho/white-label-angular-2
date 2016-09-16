@@ -13,20 +13,25 @@ var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./appcomponent/app.component');
 var banner_component_1 = require('./banner/banner.component');
 var result_list_component_1 = require('./result-list/result-list.component');
+var results_service_1 = require('./providers/results-service');
+var http_1 = require('@angular/http');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule
+                platform_browser_1.BrowserModule,
+                http_1.HttpModule
             ],
             declarations: [
                 app_component_1.AppComponent,
                 banner_component_1.BannerComponent,
                 result_list_component_1.ResultListComponent
             ],
-            providers: [],
+            providers: [
+                results_service_1.ResultsService
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

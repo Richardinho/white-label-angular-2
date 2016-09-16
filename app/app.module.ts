@@ -3,10 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './appcomponent/app.component';
 import { BannerComponent } from './banner/banner.component';
 import { ResultListComponent } from './result-list/result-list.component';
+import { ResultsService } from './providers/results-service';
+import { HttpModule }    from '@angular/http';
 
 @NgModule({
   imports:      [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   declarations: [
     AppComponent,
@@ -14,6 +17,7 @@ import { ResultListComponent } from './result-list/result-list.component';
     ResultListComponent
   ],
   providers : [
+    ResultsService
   ],
   bootstrap: [ AppComponent ]
 })

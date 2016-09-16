@@ -12,6 +12,10 @@ var core_1 = require('@angular/core');
 var ResultListComponent = (function () {
     function ResultListComponent() {
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], ResultListComponent.prototype, "results", void 0);
     ResultListComponent = __decorate([
         core_1.Component({
             selector: 'result-list',
