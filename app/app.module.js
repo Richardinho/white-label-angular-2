@@ -18,6 +18,7 @@ var result_list_component_1 = require('./result-list/result-list.component');
 var routing_1 = require('./routing');
 var search_page_component_1 = require('./search-page/search-page.component');
 var emperor_page_component_1 = require('./emperor-page/emperor-page.component');
+var emperor_card_component_1 = require('./result-list/emperor-card.component');
 var data_service_1 = require('./providers/data-service');
 var AppModule = (function () {
     function AppModule() {
@@ -35,7 +36,8 @@ var AppModule = (function () {
                 result_list_component_1.ResultListComponent,
                 refinement_component_1.RefinementComponent,
                 search_page_component_1.SearchPageComponent,
-                emperor_page_component_1.EmperorPageComponent
+                emperor_page_component_1.EmperorPageComponent,
+                emperor_card_component_1.EmperorCardComponent
             ],
             providers: [
                 data_service_1.DataService

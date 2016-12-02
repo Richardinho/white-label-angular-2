@@ -1,15 +1,5 @@
 <ul class='result-items'>
 	<li *ngFor="let item of results">
-		<div class='searchResultItem media'>
-		<a class='media-image'>
-			<img alt='' src='https://white-label-elements.herokuapp.com/images/medium/{{ item.id }}.jpg'/>
-		</a>
-		<div class='media-body'>
-			<h3><a routerLink='/emperor' routerLinkActive='active'>{{ item.name }}</a></h3>
-			<div class=''>
-				{{ item.from }} to {{ item.to }}
-			</div>
-		</div>
-		</div>
+		<emperor-card [emperor]='item'></emperor-card>
 	</li>
 </ul>

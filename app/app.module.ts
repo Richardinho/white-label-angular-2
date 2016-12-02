@@ -9,6 +9,7 @@ import { ResultListComponent } from './result-list/result-list.component';
 import { routing }             from './routing';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { EmperorPageComponent } from './emperor-page/emperor-page.component';
+import { EmperorCardComponent } from './result-list/emperor-card.component';
 
 
 import { DataService } from './providers/data-service';
@@ -25,7 +26,8 @@ import { DataService } from './providers/data-service';
     ResultListComponent,
     RefinementComponent,
     SearchPageComponent,
-    EmperorPageComponent
+    EmperorPageComponent,
+    EmperorCardComponent
   ],
   providers : [
     DataService

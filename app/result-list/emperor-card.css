@@ -1,0 +1,11 @@
+:host {
+    background : pink;
+    padding : 20px;
+    display : block;
+    height : 400px;
+}
+
+img {
+    width : 100%;
+    display : block;
+}
