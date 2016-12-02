@@ -1,10 +1,28 @@
 .result-items > li {
 	background : #1454ac; /* color used on angular 2 website */
+	background : lightblue;
 	padding : 2em;
+	border : solid 1px black;
+	float : left;
+	width : calc((100% - 20px) / 3);
+	margin-right : 10px;
+	margin-bottom : 10px;
+	height : 400px;
+
+
+
+}
+.result-items > li:nth-child(3n+3) {
+	margin-right : 0;
+}
+
+.result-items {
+	display : table;
+	background : pink;
 }
 
 .result-items > li img {
-	width : 10em;
+	width : 100%;
 }
 
 .addInfo {

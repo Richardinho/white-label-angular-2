@@ -9,15 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var data_service_1 = require('../providers/data-service');
 var EmperorPageComponent = (function () {
-    function EmperorPageComponent() {
+    function EmperorPageComponent(dataService) {
+        this.dataService = dataService;
     }
+    EmperorPageComponent.prototype.ngOnInit = function () {
+        this.refreshData();
+    };
+    EmperorPageComponent.prototype.refreshData = function () {
+        var _this = this;
+        this.dataService.getEmperor(1)
+            .then(function (emperor) {
+            _this.emperor = emperor;
+        });
+    };
     EmperorPageComponent = __decorate([
         core_1.Component({
-            template: 'the emperor page!',
+            templateUrl: 'app/emperor-page/emperor-page.html',
             selector: 'emperor'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [data_service_1.DataService])
     ], EmperorPageComponent);
     return EmperorPageComponent;
 }());

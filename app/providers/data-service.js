@@ -11,13 +11,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var API_URL = 'https://white-label-api.herokuapp.com/api/emperors';
+var API = 'https://white-label-api.herokuapp.com/api';
 var DataService = (function () {
     function DataService(http) {
         this.http = http;
     }
     DataService.prototype.getData = function (queryString) {
-        return this.http.get(API_URL + queryString)
+        return this.makeCall(API + '/emperors' + queryString);
+    };
+    DataService.prototype.getEmperor = function (id) {
+        return this.http.get(API + '/emperor?' + 'id=' + id)
+            .toPromise()
+            .then(function (response) { return response.text(); })
+            .catch(this.handleError);
+    };
+    DataService.prototype.makeCall = function (url) {
+        return this.http.get(url)
             .toPromise()
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
